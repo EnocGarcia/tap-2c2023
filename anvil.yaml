@@ -1,9 +1,26 @@
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+startup: {type: form, module: Form1}
+package_name: TAP_2C2023
 allow_embedding: false
-package_name: M3_App_1
-name: M3 App 1
-startup_form: Form1
-renamed: true
+name: TAP_2C2023
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
-dependencies: []
-services: []
+metadata: {title: TAP_2C2023, description: TAP_2C2023_ENOC_GARCIA}
+startup_form: null
+db_schema:
+  users:
+    client: none
+    server: full
+    columns:
+    - name: username
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: password
+      admin_ui: {width: 200, order: 1}
+      type: string
+    title: users
+renamed: true
