@@ -3,7 +3,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: Form1}
+startup: {type: form, module: Homepage}
 package_name: TAP_2C2023
 allow_embedding: false
 name: TAP_2C2023
@@ -13,7 +13,7 @@ metadata: {title: TAP_2C2023, description: TAP_2C2023_ENOC_GARCIA}
 startup_form: null
 db_schema:
   users:
-    client: none
+    client: full
     server: full
     columns:
     - name: username
@@ -22,5 +22,17 @@ db_schema:
     - name: password
       admin_ui: {width: 200, order: 1}
       type: string
+    - name: user_type
+      admin_ui: {width: 200, order: 2}
+      type: link_single
+      target: user_types
     title: users
+  user_types:
+    client: search
+    server: search
+    columns:
+    - name: user_type
+      admin_ui: {width: 200, order: 0}
+      type: string
+    title: user_types
 renamed: true

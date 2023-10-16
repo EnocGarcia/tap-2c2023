@@ -1,0 +1,44 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: Label
+  properties: {role: title, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: REGISTRO DE USUARIOS, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: true, icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'CSAVYV,FHLTKC'}
+- type: Label
+  properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+    visible: true, text: usuario, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: label_2
+  layout_properties: {grid_position: 'BTYLDD,ZADNJG'}
+- type: TextBox
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: su usuario,
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: text, spacing_below: small, italic: true,
+    background: '', bold: false, underline: false}
+  name: username_textbox
+  layout_properties: {grid_position: 'BTYLDD,MXQWQG'}
+  data_bindings:
+  - {property: text, code: 'self.item[''username'']', writeback: true}
+- type: Label
+  properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+    visible: true, text: contraseña, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: label_3
+  layout_properties: {grid_position: 'WBRQLT,XTLUHF'}
+- type: TextBox
+  properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: su contraseña,
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, type: text, spacing_below: small, italic: true,
+    background: '', bold: false, underline: false}
+  name: password_textbox
+  layout_properties: {grid_position: 'WBRQLT,UGQMZR'}
+  data_bindings:
+  - {property: text, code: 'self.item[''password'']', writeback: true}
+is_package: true
