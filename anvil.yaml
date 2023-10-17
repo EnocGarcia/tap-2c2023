@@ -12,7 +12,15 @@ runtime_options: {version: 2, client_version: '3', server_version: python3-sandb
 metadata: {title: TAP_2C2023, description: TAP_2C2023_ENOC_GARCIA}
 startup_form: null
 db_schema:
-  users:
+  matriculas:
+    client: none
+    server: full
+    columns:
+    - name: matricula
+      admin_ui: {width: 200, order: 0}
+      type: string
+    title: matriculas
+  usuarios:
     client: full
     server: full
     columns:
@@ -22,17 +30,5 @@ db_schema:
     - name: password
       admin_ui: {width: 200, order: 1}
       type: string
-    - name: user_type
-      admin_ui: {width: 200, order: 2}
-      type: link_single
-      target: user_types
-    title: users
-  user_types:
-    client: search
-    server: search
-    columns:
-    - name: user_type
-      admin_ui: {width: 200, order: 0}
-      type: string
-    title: user_types
+    title: usuarios
 renamed: true

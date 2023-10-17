@@ -4,53 +4,42 @@ container:
 components:
 - type: Label
   properties: {role: title, align: center, tooltip: '', border: '', foreground: '',
-    visible: true, text: SISTEMA DE GESTION DE TURNOS, font_size: null, font: '',
+    visible: true, text: SISTEMA DE GESTIÓN DE TURNOS, font_size: null, font: '',
     spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
     bold: true, underline: false, icon: ''}
   name: label_1
   layout_properties: {grid_position: 'EWFYEE,TXZDMY'}
 - type: Label
   properties: {role: body, align: center, tooltip: '', border: '', foreground: '',
-    visible: true, text: Usuario, font_size: null, font: '', spacing_above: small,
+    visible: true, text: Matrícula, font_size: null, font: '', spacing_above: small,
     icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
     underline: false, icon: ''}
   name: user
   layout_properties: {grid_position: 'AQCNLE,OAGLBT'}
 - type: TextBox
-  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: su usuario,
+  properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Ingrese la matrícula del auto,
     border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
     font: '', spacing_above: small, type: text, spacing_below: small, italic: true,
     background: '', bold: false, underline: false}
   name: user_textbox
   layout_properties: {grid_position: 'TFLMEE,VPLVXR'}
   event_bindings: {pressed_enter: text_box_1_pressed_enter}
-- type: Label
-  properties: {role: body, align: center, tooltip: '', border: '', foreground: '',
-    visible: true, text: Contraseña, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
-    underline: false, icon: ''}
-  name: pass_label
-  layout_properties: {grid_position: 'DHNYVE,WWBXBD'}
-- type: TextBox
-  properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: su contraseña,
-    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-    font: '', spacing_above: small, type: text, spacing_below: small, italic: true,
-    background: '', bold: false, underline: false}
-  name: pass_textbox
-  layout_properties: {grid_position: 'MDIOQX,JZVLOD'}
+  data_bindings:
+  - {property: text, code: 'self.item[''username'']', writeback: true}
 - type: Button
   properties: {role: tonal-button, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: true, text: Iniciar Sesión, font_size: null, font: '',
+    foreground: '', visible: true, text: Solicitar Turno, font_size: null, font: '',
     spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
     bold: false, underline: false, icon: ''}
   name: login_button
   layout_properties: {grid_position: 'UYRCEH,HIRTUJ'}
+  event_bindings: {click: go_button_click}
 - type: Button
   properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-    foreground: '', visible: true, text: Registrese, font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-    underline: false, icon: ''}
+    foreground: '', visible: true, text: 'Eres evaluador?', font_size: null, font: '',
+    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false, icon: ''}
   name: signup_button
   layout_properties: {grid_position: 'GEXUAQ,HNQOYM'}
-  event_bindings: {click: signup_button_click}
+  event_bindings: {click: login_button_click}
 is_package: true

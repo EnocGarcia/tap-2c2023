@@ -17,8 +17,7 @@ import anvil.server
 #
 
 @anvil.server.callable
-def add_user(user_dict):
-  app_tables.users.add_row(
-    user_type=app_tables.user_types.get(user_type="basic"),
-    **user_dict
-  )
+def login_user(user_dict):
+  if app_tables.usuarios.get(**user_dict):
+    return True
+  raise Exception("USUARIO NO ENCONTRADO")
