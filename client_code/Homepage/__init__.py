@@ -18,7 +18,7 @@ class Homepage(HomepageTemplate):
     user = {}
     login_clicked = alert(
       content=Login(item=user),
-      title="Registrar Usuario",
+      title="Iniciar Sesión",
       large=True,
       buttons=[("Iniciar Sesión", True), ("Cancelar", False)]
     )
