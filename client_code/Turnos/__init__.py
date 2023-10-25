@@ -6,12 +6,13 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 class Turnos(TurnosTemplate):
-  def __init__(self, **properties):
+  def __init__(self, licensePlate, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
+    self.licensePlate = licensePlate
+    self.welcome_label.text = f"Dominio: {self.licensePlate}"
     # Any code you write here will run before the form opens.
-
+  
   def logout_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('Homepage')

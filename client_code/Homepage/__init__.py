@@ -26,12 +26,15 @@ class Homepage(HomepageTemplate):
     if login_clicked:
       try:
         anvil.server.call('login_user', user)
-        open_form('Eval')
-      except Exception:
-        alert("Usuario no encontrado")
+        open_form('Eval', **user)
+      except Exception as e:
+        alert(str(e))
 
   def go_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    
-    open_form('Turnos')
-    pass
+    _licensePlate = self.licensePlate_textbox.text.upper()
+    try:
+      anvil.server.call('login_licensePlate', _licensePlate)
+      open_form('Turnos',licensePlate=_licensePlate)
+    except Exception as e:
+      alert(str(e))
