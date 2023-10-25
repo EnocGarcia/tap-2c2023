@@ -16,3 +16,10 @@ class Eval(EvalTemplate):
     """This method is called when the button is clicked"""
     open_form('Homepage')
 
+  def generate_dates_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.server.call('launch_generate_dates')
+    alert('Se generaron nuevos turnos!')
+    return True
+
+

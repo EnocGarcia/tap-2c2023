@@ -17,3 +17,8 @@ class Turnos(TurnosTemplate):
     """This method is called when the button is clicked"""
     open_form('Homepage')
 
+  def search_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.turnos.items = anvil.server.call('get_open_dates', self.date_picker_1.date)
+
+

@@ -21,4 +21,16 @@ components:
   name: logout
   layout_properties: {grid_position: 'DPUSRD,ARHOQN'}
   event_bindings: {click: logout_click}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_2
+  layout_properties: {grid_position: 'OMFKFO,FMZTHG'}
+- type: Button
+  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Generar Turnos, font_size: null, font: '',
+    spacing_above: small, icon_align: left, spacing_below: small, italic: true, background: '',
+    bold: false, underline: true, icon: ''}
+  name: generate_dates
+  layout_properties: {grid_position: 'OPTISG,YIZHRO'}
+  event_bindings: {click: generate_dates_click}
 is_package: true

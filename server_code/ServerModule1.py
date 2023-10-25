@@ -24,12 +24,12 @@ def generate_dates():
     tables.order_by("date", ascending=False)
   )
   if not len(dates):
-    _date = dt.date.today()
+    _initdate = dt.date.today()
   else :
-    _date = dates[0]['date'] + dt.timedelta(days=1)
+    _initdate = dates[0]['date'] + dt.timedelta(days=1)
 
   for i in range(50):
-    _date = _date + dt.timedelta(days=i)
+    _date = _initdate + dt.timedelta(days=i)
     for j in range(12):
       _datetime = dt.datetime.combine(_date, dt.time(hour=10))
       _datetime = _datetime + dt.timedelta(minutes=30*j)
@@ -37,7 +37,10 @@ def generate_dates():
       
   return True
       
-    
+@anvil.server.callable
+def launch_generate_dates():
+  task = anvil.server.launch_background_task('generate_dates')
+  return task
 
 @anvil.server.callable
 def login_user(user_dict):
@@ -54,3 +57,10 @@ def login_licensePlate(licensePlate):
     app_tables.matriculas.add_row(licensePlate=licensePlate)
     
   return True
+
+@anvil.server.callable
+def get_open_dates(date):
+  return app_tables.fechas.search(
+    reserved=False,
+    date=q.between(date, date+dt.timedelta(days=1))
+  )

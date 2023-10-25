@@ -13,7 +13,7 @@ metadata: {title: TAP_2C2023, description: TAP_2C2023_ENOC_GARCIA}
 startup_form: null
 db_schema:
   matriculas:
-    client: full
+    client: search
     server: full
     columns:
     - name: licensePlate
@@ -21,7 +21,7 @@ db_schema:
       type: string
     title: matriculas
   usuarios:
-    client: full
+    client: search
     server: full
     columns:
     - name: username
@@ -32,7 +32,7 @@ db_schema:
       type: string
     title: usuarios
   fechas:
-    client: full
+    client: search
     server: full
     columns:
     - name: date
@@ -41,5 +41,13 @@ db_schema:
     - name: reserved
       admin_ui: {width: 200, order: 1}
       type: bool
+    - name: licensePlate
+      admin_ui: {width: 200, order: 2}
+      type: string
     title: fechas
+  evaluaciones:
+    client: search
+    server: full
+    columns: []
+    title: evaluaciones
 renamed: true
