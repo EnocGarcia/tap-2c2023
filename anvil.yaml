@@ -47,10 +47,34 @@ db_schema:
     - name: id
       admin_ui: {width: 200, order: 3}
       type: number
+    - name: eval
+      admin_ui: {width: 200, order: 4}
+      type: bool
     title: fechas
   evaluaciones:
-    client: search
+    client: full
     server: full
-    columns: []
+    columns:
+    - name: id
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: score_1
+      admin_ui: {width: 200, order: 1}
+      type: number
+    - name: score_2
+      admin_ui: {width: 200, order: 2}
+      type: number
+    - name: score_3
+      admin_ui: {width: 200, order: 3}
+      type: number
+    - name: score_4
+      admin_ui: {width: 200, order: 4}
+      type: number
+    - name: score_5
+      admin_ui: {order: 5, width: 200}
+      type: number
+    - name: final_score
+      admin_ui: {width: 200, order: 6}
+      type: number
     title: evaluaciones
 renamed: true

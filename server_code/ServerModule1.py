@@ -36,7 +36,7 @@ def generate_dates():
       _id += 1
       _datetime = dt.datetime.combine(_date, dt.time(hour=10))
       _datetime = _datetime + dt.timedelta(minutes=30*j)
-      app_tables.fechas.add_row(date=_datetime,reserved=False,id=_id)
+      app_tables.fechas.add_row(date=_datetime,reserved=False,id=_id, eval=False)
       
   return True
       

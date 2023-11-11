@@ -23,14 +23,24 @@ class Turnos(TurnosTemplate):
 
   def save_click(self, **event_args):
     """This method is called when the button is clicked"""
+    _reserve = app_tables.fechas.search(licensePlate=self.licensePlate, eval=False)
+    if len(_reserve) > 0:
+      alert('EXISTE EVALUACIÓN PEDIENTE')
+      raise Exception('EXISTE EVALUACIÓN PENDIENTE')
+    
     _id = int(self.reserve_id.text)
     row = app_tables.fechas.get(id=_id)
+    
     if not row:
+      alert('ID NO EXISTE')
       raise Exception('ID NO EXISTE')
 
     if row['reserved']:
+      alert('ID RESERVADO')
       raise Exception('ID RESERVADO')
 
     row['reserved'] = True
     row['licensePlate'] = self.licensePlate
+
+    app_tables.evaluaciones.add_row(id=_id)
 
