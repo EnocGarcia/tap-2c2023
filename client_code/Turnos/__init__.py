@@ -21,4 +21,16 @@ class Turnos(TurnosTemplate):
     """This method is called when the button is clicked"""
     self.turnos.items = anvil.server.call('get_open_dates', self.date_picker_1.date)
 
+  def save_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    _id = int(self.reserve_id.text)
+    row = app_tables.fechas.get(id=_id)
+    if not row:
+      raise Exception('ID NO EXISTE')
+
+    if row['reserved']:
+      raise Exception('ID RESERVADO')
+
+    row['reserved'] = True
+    row['licensePlate'] = self.licensePlate
 

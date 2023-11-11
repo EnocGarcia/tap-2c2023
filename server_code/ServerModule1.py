@@ -25,15 +25,18 @@ def generate_dates():
   )
   if not len(dates):
     _initdate = dt.date.today()
+    _id = 0
   else :
     _initdate = dates[0]['date'] + dt.timedelta(days=1)
+    _id = dates[0]['id']
 
   for i in range(50):
     _date = _initdate + dt.timedelta(days=i)
     for j in range(12):
+      _id += 1
       _datetime = dt.datetime.combine(_date, dt.time(hour=10))
       _datetime = _datetime + dt.timedelta(minutes=30*j)
-      app_tables.fechas.add_row(date=_datetime,reserved=False)
+      app_tables.fechas.add_row(date=_datetime,reserved=False,id=_id)
       
   return True
       
@@ -51,7 +54,7 @@ def login_user(user_dict):
 @anvil.server.callable
 def login_licensePlate(licensePlate):
   if not licensePlate:
-    raise Exception("MATRICULA INVALIDA")
+    raise Exception("INGRESAR MATRICULA")
     
   if not app_tables.matriculas.get(licensePlate=licensePlate):
     app_tables.matriculas.add_row(licensePlate=licensePlate)
@@ -61,6 +64,5 @@ def login_licensePlate(licensePlate):
 @anvil.server.callable
 def get_open_dates(date):
   return app_tables.fechas.search(
-    reserved=False,
     date=q.between(date, date+dt.timedelta(days=1))
   )

@@ -36,8 +36,9 @@ components:
   properties:
     role: tonal-data-grid
     columns:
-    - {id: GWHTIG, title: FECHA, data_key: date, $$hashKey: 'object:36601', expand: false}
-    - {id: TJEDSN, title: SELECCIONAR, data_key: reserved, $$hashKey: 'object:36602'}
+    - {id: BLYAQS, data_key: id, title: id}
+    - {id: GWHTIG, title: Fecha, data_key: date, $$hashKey: 'object:36601', expand: false}
+    - {id: TJEDSN, title: Reservado, data_key: reserved, $$hashKey: 'object:36602'}
     auto_header: true
     tooltip: ''
     border: ''
@@ -56,6 +57,7 @@ components:
     properties: {spacing_above: none, spacing_below: none, item_template: Turnos.RowTemplate1}
     name: turnos
     layout_properties: {}
+    data_bindings: []
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Buscar, font_size: null, font: '', spacing_above: small,
@@ -64,13 +66,18 @@ components:
   name: search
   layout_properties: {grid_position: 'TYQOWN,WVBBCP'}
   event_bindings: {click: search_click}
+- name: reserve_id
+  properties: {placeholder: id, text: ''}
+  type: TextBox
+  layout_properties: {grid_position: 'TYQOWN,CBUOOK EBUZIJ,GVOPVI'}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Reservar Turno, font_size: null, font: '',
     spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
     bold: false, underline: false, icon: ''}
   name: save
-  layout_properties: {grid_position: 'TYQOWN,CBUOOK'}
+  layout_properties: {grid_position: 'TYQOWN,CBUOOK EBUZIJ,CLCUTI'}
+  event_bindings: {click: save_click}
 - type: Label
   properties: {role: input-prompt, align: center, tooltip: '', border: '', foreground: '',
     visible: true, text: Historial, font_size: null, font: '', spacing_above: small,
