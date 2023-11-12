@@ -66,3 +66,15 @@ def get_open_dates(date):
   return app_tables.fechas.search(
     date=q.between(date, date+dt.timedelta(days=1))
   )
+
+@anvil.server.callable
+def get_history(licensePlate):
+  _rows = app_tables.fechas.search(
+    licensePlate=licensePlate
+  )
+
+  _ids = [row['id'] for row in _rows]
+  
+  return app_tables.evaluaciones.search(
+    id=q.any_of(*_ids)
+  )

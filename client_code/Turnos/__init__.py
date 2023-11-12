@@ -11,7 +11,7 @@ class Turnos(TurnosTemplate):
     self.init_components(**properties)
     self.licensePlate = licensePlate
     self.welcome_label.text = f"Dominio: {self.licensePlate}"
-    self.historial.items = anvil.server.call('get_open_dates', self.licensePlate)
+    self.historial.items = anvil.server.call('get_history', self.licensePlate)
     # Any code you write here will run before the form opens.
   
   def logout_click(self, **event_args):
@@ -21,7 +21,7 @@ class Turnos(TurnosTemplate):
   def search_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.turnos.items = anvil.server.call('get_open_dates', self.date_picker_1.date)
-    self.historial.items = anvil.server.call('get_open_dates', self.licensePlate)
+    self.historial.items = anvil.server.call('get_history', self.licensePlate)
 
   def save_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -44,5 +44,5 @@ class Turnos(TurnosTemplate):
     row['reserved'] = True
     row['licensePlate'] = self.licensePlate
 
-    app_tables.evaluaciones.add_row(id=_id)
+    app_tables.evaluaciones.add_row(id=_id, S1=0, S2=0, S3=0, S4=0, S5=0, S6=0, S7=0, S8=0, Score=0)
 

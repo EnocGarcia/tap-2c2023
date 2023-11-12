@@ -85,5 +85,8 @@ db_schema:
     - name: S8
       admin_ui: {order: 5.875, width: 200}
       type: number
+    - name: Comments
+      admin_ui: {width: 200, order: 7}
+      type: string
     title: evaluaciones
 renamed: true
