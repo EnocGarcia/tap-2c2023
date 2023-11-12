@@ -58,23 +58,32 @@ db_schema:
     - name: id
       admin_ui: {width: 200, order: 0}
       type: number
-    - name: score_1
-      admin_ui: {width: 200, order: 1}
+    - name: S1
+      admin_ui: {order: 1, width: 200}
       type: number
-    - name: score_2
-      admin_ui: {width: 200, order: 2}
+    - name: S2
+      admin_ui: {order: 2, width: 200}
       type: number
-    - name: score_3
-      admin_ui: {width: 200, order: 3}
+    - name: S3
+      admin_ui: {order: 3, width: 200}
       type: number
-    - name: score_4
-      admin_ui: {width: 200, order: 4}
+    - name: S4
+      admin_ui: {order: 4, width: 200}
       type: number
-    - name: score_5
+    - name: S5
       admin_ui: {order: 5, width: 200}
       type: number
-    - name: final_score
-      admin_ui: {width: 200, order: 6}
+    - name: Score
+      admin_ui: {order: 6, width: 200}
+      type: number
+    - name: S6
+      admin_ui: {order: 5.5, width: 200}
+      type: number
+    - name: S7
+      admin_ui: {order: 5.75, width: 200}
+      type: number
+    - name: S8
+      admin_ui: {order: 5.875, width: 200}
       type: number
     title: evaluaciones
 renamed: true

@@ -85,10 +85,6 @@ components:
     underline: true, icon: ''}
   name: label_2
   layout_properties: {grid_position: 'QCEMBR,PJWFZT'}
-- type: Spacer
-  properties: {height: 32}
-  name: spacer_4
-  layout_properties: {grid_position: 'LOUOUI,VNILHD'}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Salir, font_size: null, font: '', spacing_above: small,
