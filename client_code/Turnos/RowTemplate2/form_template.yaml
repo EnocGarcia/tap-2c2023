@@ -1,3 +1,7 @@
 is_package: true
 container: {type: DataRowPanel}
-components: []
+components:
+- name: status
+  properties: {text: Estado}
+  type: Label
+  layout_properties: {column: XUTJGL}

@@ -85,6 +85,27 @@ components:
     underline: true, icon: ''}
   name: label_2
   layout_properties: {grid_position: 'QCEMBR,PJWFZT'}
+- name: data_grid_2
+  properties:
+    columns:
+    - {id: TILOGG, data_key: id, title: id}
+    - {id: LPTLND, data_key: S1, title: S1}
+    - {id: NHWMCM, data_key: S2, title: S2}
+    - {id: ONIOGQ, data_key: S3, title: S3}
+    - {id: FLHAOX, data_key: S4, title: S4}
+    - {id: MAVGSL, data_key: S5, title: S5}
+    - {id: ICGNVQ, data_key: S6, title: S6}
+    - {id: ELQQKQ, data_key: S7, title: S7}
+    - {id: DHKRDL, data_key: S8, title: S8}
+    - {id: LSIZXR, data_key: Score, title: Score}
+    - {id: XUTJGL, data_key: column_1, title: Estado}
+    role: tonal-data-grid
+  type: DataGrid
+  components:
+  - name: historial
+    properties: {item_template: Turnos.RowTemplate2}
+    type: RepeatingPanel
+  layout_properties: {grid_position: 'UIESPY,ZBIJJH'}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Salir, font_size: null, font: '', spacing_above: small,
