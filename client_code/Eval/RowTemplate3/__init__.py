@@ -60,18 +60,20 @@ class RowTemplate3(RowTemplate3Template):
 
   def Score_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
-    _s1 = self.item['S1']
-    _s2 = self.item['S2']
-    _s3 = self.item['S3']
-    _s4 = self.item['S4']
-    _s5 = self.item['S5']
-    _s6 = self.item['S6']
-    _s7 = self.item['S7']
-    _s8 = self.item['S8']
+    _s1 = int(self.S1.text)
+    _s2 = int(self.S2.text)
+    _s3 = int(self.S3.text)
+    _s4 = int(self.S4.text)
+    _s5 = int(self.S5.text)
+    _s6 = int(self.S6.text)
+    _s7 = int(self.S7.text)
+    _s8 = int(self.S8.text)
 
-    _score = _s1+_s2+_s3+_s4+_s5+_s5+_s6+_s7+_s8
+    _score = _s1+_s2+_s3+_s4+_s5+_s6+_s7+_s8
 
-    if _score != int(self.Score.text):
+    if int(_score) != int(self.Score.text):
+      # print(_score)
+      # print(self.Score.text)
       alert('NO COINCIDE EL PUNTAJE FINAL CON LOS PARCIALES')
       self.Score.text = 0
 
@@ -88,7 +90,7 @@ class RowTemplate3(RowTemplate3Template):
       "S7": int(self.S7.text),
       "S8": int(self.S8.text),
       "Score": int(self.Score.text),
-      "Comments": int(self.Comments.text),
+      "Comments": self.Comments.text,
       "eval": self.eval.checked
     }
     

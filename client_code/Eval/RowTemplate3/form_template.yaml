@@ -4,58 +4,58 @@ container:
   properties: {align: center}
 components:
 - name: S1
-  properties: {placeholder: '', type: number, font_size: null}
+  properties: {placeholder: '', type: number, font_size: 8}
   type: TextBox
   layout_properties: {column: CTVZXR}
   event_bindings: {}
 - name: S2
-  properties: {placeholder: '', type: number}
+  properties: {placeholder: '', type: number, font_size: 8}
   type: TextBox
   layout_properties: {column: CTKAEA}
   event_bindings: {}
 - name: S3
-  properties: {placeholder: '', type: number}
+  properties: {placeholder: '', type: number, font_size: 8}
   type: TextBox
   layout_properties: {column: FCLGFH}
   event_bindings: {}
 - name: S4
-  properties: {placeholder: '', type: number}
+  properties: {placeholder: '', type: number, font: '', font_size: 8}
   type: TextBox
   layout_properties: {column: PGGTGR}
   event_bindings: {}
 - name: S5
-  properties: {placeholder: '', type: number}
+  properties: {placeholder: '', type: number, font_size: 8}
   type: TextBox
   layout_properties: {column: TBYMXF}
   event_bindings: {}
 - name: S6
-  properties: {placeholder: '', type: number}
+  properties: {placeholder: '', type: number, font_size: 8}
   type: TextBox
   layout_properties: {column: NMLLEH}
   event_bindings: {}
 - name: S7
-  properties: {placeholder: '', type: number}
+  properties: {placeholder: '', type: number, font_size: 8}
   type: TextBox
   layout_properties: {column: JYOSPX}
   event_bindings: {}
 - name: S8
-  properties: {placeholder: '', type: number}
+  properties: {placeholder: '', type: number, font_size: 8}
   type: TextBox
   layout_properties: {column: MNKMMT}
   event_bindings: {}
 - name: Score
-  properties: {placeholder: '', type: number}
+  properties: {placeholder: '', type: number, font_size: 8}
   type: TextBox
   layout_properties: {column: ZTJEIV}
   event_bindings: {lost_focus: Score_change}
   data_bindings: []
 - name: Comments
-  properties: {placeholder: ''}
+  properties: {placeholder: '', font_size: 8}
   type: TextBox
   layout_properties: {column: PEIEYN}
   event_bindings: {}
 - name: eval
-  properties: {text: '', align: center}
+  properties: {text: '', align: center, font_size: 8}
   type: CheckBox
   layout_properties: {column: NBYRQA}
   event_bindings: {change: eval_change}

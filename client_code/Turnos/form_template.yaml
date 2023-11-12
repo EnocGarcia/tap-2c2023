@@ -88,16 +88,16 @@ components:
 - name: data_grid_2
   properties:
     columns:
-    - {id: OQQLQG, data_key: fecha, title: Fecha}
-    - {id: LPTLND, data_key: S1, title: S1}
-    - {id: NHWMCM, data_key: S2, title: S2}
-    - {id: ONIOGQ, data_key: S3, title: S3}
-    - {id: FLHAOX, data_key: S4, title: S4}
-    - {id: MAVGSL, data_key: S5, title: S5}
-    - {id: ICGNVQ, data_key: S6, title: S6}
-    - {id: ELQQKQ, data_key: S7, title: S7}
-    - {id: DHKRDL, data_key: S8, title: S8}
-    - {id: LSIZXR, data_key: Score, title: Score}
+    - {id: OQQLQG, data_key: fecha, title: Fecha, width: '115'}
+    - {id: LPTLND, data_key: S1, title: S1, width: '55'}
+    - {id: NHWMCM, data_key: S2, title: S2, width: '55'}
+    - {id: ONIOGQ, data_key: S3, title: S3, width: '55'}
+    - {id: FLHAOX, data_key: S4, title: S4, width: '55'}
+    - {id: MAVGSL, data_key: S5, title: S5, width: '55'}
+    - {id: ICGNVQ, data_key: S6, title: S6, width: '55'}
+    - {id: ELQQKQ, data_key: S7, title: S7, width: '55'}
+    - {id: DHKRDL, data_key: S8, title: S8, width: '55'}
+    - {id: LSIZXR, data_key: Score, title: Score, width: '70'}
     - {id: XUTJGL, data_key: column_1, title: Estado}
     role: tonal-data-grid
   type: DataGrid

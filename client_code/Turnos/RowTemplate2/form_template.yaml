@@ -1,5 +1,7 @@
 is_package: true
-container: {type: DataRowPanel}
+container:
+  type: DataRowPanel
+  properties: {align: left}
 components:
 - name: status
   properties: {italic: true, underline: true, bold: true, text: Estado}

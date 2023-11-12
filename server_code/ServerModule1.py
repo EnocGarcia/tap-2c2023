@@ -83,10 +83,15 @@ def get_history(licensePlate):
 def get_open_eval():
   _open_dates = app_tables.fechas.search(eval=False,reserved=True)
   _ids = [row['id'] for row in _open_dates]
-  return app_tables.evaluaciones.search(id=q.any_of(*_ids))
+  _open_evals = app_tables.evaluaciones.search(id=q.any_of(*_ids))
+  _open_evals = [eval for eval in _open_evals if eval['date'].date() == dt.date.today()]
+  return _open_evals
 
 @anvil.server.callable
 def set_eval(eval):
+  if int(eval['Score']) == 0:
+    raise Exception('EL PUNTAJE FINAL NO PUEDE SER 0')
+
   _eval = app_tables.evaluaciones.get(id=eval['id'])
   _fecha = app_tables.fechas.get(id=eval['id'])
   
