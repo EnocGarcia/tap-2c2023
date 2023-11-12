@@ -78,3 +78,47 @@ def get_history(licensePlate):
   return app_tables.evaluaciones.search(
     id=q.any_of(*_ids)
   )
+
+@anvil.server.callable
+def get_open_eval():
+  _open_dates = app_tables.fechas.search(eval=False,reserved=True)
+  _ids = [row['id'] for row in _open_dates]
+  return app_tables.evaluaciones.search(id=q.any_of(*_ids))
+
+@anvil.server.callable
+def set_eval(eval):
+  _eval = app_tables.evaluaciones.get(id=eval['id'])
+  _fecha = app_tables.fechas.get(id=eval['id'])
+  
+  _eval['S1'] = eval['S1'] 
+  _eval['S2'] = eval['S2'] 
+  _eval['S3'] = eval['S3'] 
+  _eval['S4'] = eval['S4'] 
+  _eval['S5'] = eval['S5'] 
+  _eval['S6'] = eval['S6'] 
+  _eval['S7'] = eval['S7'] 
+  _eval['S8'] = eval['S8'] 
+  _eval['Score'] = eval['Score'] 
+  _eval['Comments'] = eval['Comments'] 
+
+  _fecha['eval'] = eval['eval']
+
+  return True
+
+@anvil.server.callable
+def reserve_date(id, licensePlate):
+  _reserve = app_tables.fechas.search(licensePlate=licensePlate, eval=False)
+  _reserve = [row for row in _reserve if row['date'].date() >= dt.date.today()]
+  row = app_tables.fechas.get(id=id)
+  if len(_reserve) > 0:
+    raise Exception('EXISTE EVALUACIÓN PENDIENTE')
+  
+  if not row:
+    raise Exception('ID NO EXISTE')
+
+  if row['reserved']:
+    raise Exception('ID RESERVADO')
+  
+  row['reserved'] = True
+  row['licensePlate'] = licensePlate
+  app_tables.evaluaciones.add_row(id=id, S1=0, S2=0, S3=0, S4=0, S5=0, S6=0, S7=0, S8=0, Score=0)

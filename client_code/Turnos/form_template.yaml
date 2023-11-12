@@ -67,7 +67,7 @@ components:
   layout_properties: {grid_position: 'TYQOWN,WVBBCP'}
   event_bindings: {click: search_click}
 - name: reserve_id
-  properties: {placeholder: id, text: ''}
+  properties: {placeholder: id, text: '', type: number}
   type: TextBox
   layout_properties: {grid_position: 'TYQOWN,CBUOOK EBUZIJ,GVOPVI'}
 - type: Button

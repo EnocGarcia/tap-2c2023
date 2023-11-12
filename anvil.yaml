@@ -32,7 +32,7 @@ db_schema:
       type: string
     title: usuarios
   fechas:
-    client: full
+    client: search
     server: full
     columns:
     - name: date
@@ -52,7 +52,7 @@ db_schema:
       type: bool
     title: fechas
   evaluaciones:
-    client: full
+    client: search
     server: full
     columns:
     - name: id

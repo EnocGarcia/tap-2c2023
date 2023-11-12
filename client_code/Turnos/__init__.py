@@ -26,26 +26,8 @@ class Turnos(TurnosTemplate):
 
   def save_click(self, **event_args):
     """This method is called when the button is clicked"""
-    _reserve = app_tables.fechas.search(licensePlate=self.licensePlate, eval=False)
-    _reserve = [row for row in _reserve if row['date'].date() < dt.date.today()]
-    
-    if len(_reserve) > 0:
-      alert('EXISTE EVALUACIÓN PENDIENTE')
-      raise Exception('EXISTE EVALUACIÓN PENDIENTE')
-    
-    _id = int(self.reserve_id.text)
-    row = app_tables.fechas.get(id=_id)
-    
-    if not row:
-      alert('ID NO EXISTE')
-      raise Exception('ID NO EXISTE')
-
-    if row['reserved']:
-      alert('ID RESERVADO')
-      raise Exception('ID RESERVADO')
-
-    row['reserved'] = True
-    row['licensePlate'] = self.licensePlate
-
-    app_tables.evaluaciones.add_row(id=_id, S1=0, S2=0, S3=0, S4=0, S5=0, S6=0, S7=0, S8=0, Score=0)
-
+    id = int(self.reserve_id.text)
+    try:
+      anvil.server.call('reserve_date', id, self.licensePlate)
+    except Exception as e:
+      alert(str(e))

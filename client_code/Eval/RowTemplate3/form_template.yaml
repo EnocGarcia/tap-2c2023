@@ -1,0 +1,61 @@
+is_package: true
+container:
+  type: DataRowPanel
+  properties: {align: center}
+components:
+- name: S1
+  properties: {placeholder: '', type: number, font_size: null}
+  type: TextBox
+  layout_properties: {column: CTVZXR}
+  event_bindings: {}
+- name: S2
+  properties: {placeholder: '', type: number}
+  type: TextBox
+  layout_properties: {column: CTKAEA}
+  event_bindings: {}
+- name: S3
+  properties: {placeholder: '', type: number}
+  type: TextBox
+  layout_properties: {column: FCLGFH}
+  event_bindings: {}
+- name: S4
+  properties: {placeholder: '', type: number}
+  type: TextBox
+  layout_properties: {column: PGGTGR}
+  event_bindings: {}
+- name: S5
+  properties: {placeholder: '', type: number}
+  type: TextBox
+  layout_properties: {column: TBYMXF}
+  event_bindings: {}
+- name: S6
+  properties: {placeholder: '', type: number}
+  type: TextBox
+  layout_properties: {column: NMLLEH}
+  event_bindings: {}
+- name: S7
+  properties: {placeholder: '', type: number}
+  type: TextBox
+  layout_properties: {column: JYOSPX}
+  event_bindings: {}
+- name: S8
+  properties: {placeholder: '', type: number}
+  type: TextBox
+  layout_properties: {column: MNKMMT}
+  event_bindings: {}
+- name: Score
+  properties: {placeholder: '', type: number}
+  type: TextBox
+  layout_properties: {column: ZTJEIV}
+  event_bindings: {lost_focus: Score_change}
+  data_bindings: []
+- name: Comments
+  properties: {placeholder: ''}
+  type: TextBox
+  layout_properties: {column: PEIEYN}
+  event_bindings: {}
+- name: eval
+  properties: {text: '', align: center}
+  type: CheckBox
+  layout_properties: {column: NBYRQA}
+  event_bindings: {change: eval_change}

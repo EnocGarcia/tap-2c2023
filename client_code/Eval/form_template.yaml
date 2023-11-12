@@ -9,10 +9,32 @@ components:
     underline: false, icon: ''}
   name: label_1
   layout_properties: {grid_position: 'IQEJEB,HXMDCR'}
-- type: Spacer
-  properties: {height: 32}
-  name: spacer_1
-  layout_properties: {grid_position: 'QYWMBU,NFCYOW'}
+- name: data_grid_1
+  properties:
+    columns:
+    - {id: TYQNXL, data_key: id, title: id, width: '40'}
+    - {id: CTVZXR, data_key: S1, title: S1, width: '55'}
+    - {id: CTKAEA, data_key: S2, title: S2, width: '55'}
+    - {id: FCLGFH, data_key: S3, title: S3, width: '55'}
+    - {id: PGGTGR, data_key: S4, title: S4, width: '55'}
+    - {id: TBYMXF, data_key: S5, title: S5, width: '55'}
+    - {id: NMLLEH, data_key: S6, title: S6, width: '55'}
+    - {id: JYOSPX, data_key: S7, title: S7, width: '55'}
+    - {id: MNKMMT, data_key: S8, title: S8, width: '55'}
+    - {id: ZTJEIV, data_key: Score, title: Score, width: '55'}
+    - {id: PEIEYN, data_key: Comments, title: Comentario}
+    - {id: NBYRQA, data_key: eval, title: Cerrado, width: '60'}
+  type: DataGrid
+  components:
+  - name: evaluation
+    properties: {item_template: Eval.RowTemplate3}
+    type: RepeatingPanel
+  layout_properties: {grid_position: 'GGWGSW,RVCVWT'}
+- name: refresh
+  properties: {text: Refrescar, role: filled-button}
+  type: Button
+  layout_properties: {grid_position: 'DPUSRD,BWRUJH'}
+  event_bindings: {click: refresh_click}
 - type: Button
   properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
     foreground: '', visible: true, text: Salir, font_size: null, font: '', spacing_above: small,

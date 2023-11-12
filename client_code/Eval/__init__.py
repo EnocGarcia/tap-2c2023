@@ -9,6 +9,7 @@ class Eval(EvalTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.evaluation.items = anvil.server.call('get_open_eval')
 
     # Any code you write here will run before the form opens.
 
@@ -21,5 +22,9 @@ class Eval(EvalTemplate):
     anvil.server.call('launch_generate_dates')
     alert('Se generaron nuevos turnos!')
     return True
+
+  def refresh_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.evaluation.items = anvil.server.call('get_open_eval')
 
 
