@@ -1,8 +1,12 @@
 is_package: true
 container: {type: DataRowPanel}
 components:
-- name: Status
+- name: status
   properties: {italic: true, underline: true, bold: true, text: Estado}
   type: Link
   layout_properties: {column: XUTJGL}
-  event_bindings: {click: Status_click}
+  event_bindings: {click: status_click}
+- name: fecha
+  properties: {text: Fecha}
+  type: Label
+  layout_properties: {column: OQQLQG}

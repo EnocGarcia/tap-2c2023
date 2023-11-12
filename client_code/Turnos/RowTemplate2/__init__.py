@@ -11,8 +11,9 @@ class RowTemplate2(RowTemplate2Template):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     _fecha = app_tables.fechas.get(id=self.item['id'])
+    self.fecha.text = _fecha['date'].strftime('%Y/%m/%d %H:%M')
     
-    if self.item['Score'] == 0 and _fecha['date'] < dt.date.today():
+    if self.item['Score'] == 0 and _fecha['date'].date() < dt.date.today():
       self.status.text = 'Incompleta'
     elif self.item['Score'] == 0:
       self.status.text = 'Pendiente'
@@ -36,6 +37,6 @@ class RowTemplate2(RowTemplate2Template):
 
     # Any code you write here will run before the form opens.
 
-  def Status_click(self, **event_args):
+  def status_click(self, **event_args):
     """This method is called when the link is clicked"""
     alert(self.item['Comments'])

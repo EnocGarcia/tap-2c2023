@@ -72,7 +72,7 @@ def get_history(licensePlate):
   _rows = app_tables.fechas.search(
     licensePlate=licensePlate
   )
-
+  
   _ids = [row['id'] for row in _rows]
   
   return app_tables.evaluaciones.search(

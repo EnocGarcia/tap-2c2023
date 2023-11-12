@@ -4,6 +4,7 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+import datetime as dt
 
 class Turnos(TurnosTemplate):
   def __init__(self, licensePlate, **properties):
@@ -26,8 +27,10 @@ class Turnos(TurnosTemplate):
   def save_click(self, **event_args):
     """This method is called when the button is clicked"""
     _reserve = app_tables.fechas.search(licensePlate=self.licensePlate, eval=False)
+    _reserve = [row for row in _reserve if row['date'].date() < dt.date.today()]
+    
     if len(_reserve) > 0:
-      alert('EXISTE EVALUACIÓN PEDIENTE')
+      alert('EXISTE EVALUACIÓN PENDIENTE')
       raise Exception('EXISTE EVALUACIÓN PENDIENTE')
     
     _id = int(self.reserve_id.text)

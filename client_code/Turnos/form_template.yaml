@@ -88,7 +88,7 @@ components:
 - name: data_grid_2
   properties:
     columns:
-    - {id: TILOGG, data_key: id, title: id}
+    - {id: OQQLQG, data_key: fecha, title: Fecha}
     - {id: LPTLND, data_key: S1, title: S1}
     - {id: NHWMCM, data_key: S2, title: S2}
     - {id: ONIOGQ, data_key: S3, title: S3}
