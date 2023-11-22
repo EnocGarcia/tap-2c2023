@@ -26,8 +26,8 @@ class Turnos(TurnosTemplate):
 
   def save_click(self, **event_args):
     """This method is called when the button is clicked"""
-    id = int(self.reserve_id.text)
     try:
+      id = int(self.reserve_id.text)
       anvil.server.call('reserve_date', id, self.licensePlate)
     except Exception as e:
       alert(str(e))

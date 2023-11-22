@@ -82,9 +82,9 @@ def get_history(licensePlate):
 @anvil.server.callable
 def get_open_eval():
   _open_dates = app_tables.fechas.search(eval=False,reserved=True)
-  _ids = [row['id'] for row in _open_dates]
+  _ids = [row['id'] for row in _open_dates if row['date'].date() == dt.date.today()]
   _open_evals = app_tables.evaluaciones.search(id=q.any_of(*_ids))
-  _open_evals = [eval for eval in _open_evals if eval['date'].date() == dt.date.today()]
+  _open_evals = [eval for eval in _open_evals]
   return _open_evals
 
 @anvil.server.callable
